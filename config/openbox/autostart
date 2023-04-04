@@ -1,0 +1,24 @@
+# compositor - background process + disable shadowing effects during session
+picom -CGb &
+
+# notifications
+/usr/bin/dunst &
+
+# panel
+tint2  -c ~/.config/tint2/uncreative/uncreative.tint2rc
+# network manager
+nm-applet &
+
+# Autostart
+dex -a -s /etc/xdg/autostart/:~/.config/autostart/ &
+
+# Set display from arandr saved script
+sh ~/.screenlayout/monitor.sh &
+
+# Polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Wallpaper
+feh --bg-tile /home/reimu/Downloads/wallpaper/.wallpaper.png
+# Low battery notifier
+~/.config/openbox/scripts/low_bat_notifier.sh &
